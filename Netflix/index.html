@@ -32,13 +32,22 @@
                 </div>
                 <div class="input-box">
                     <label for="age">Age</label><br>
-                    <input type="number" name="Age" id="age" placeholder="Age">
+                    <input type="number" name="Age" id="age" placeholder="Age" min="0" max="150">
                 </div>
                 <div class="input-box">
                     <label for="email">Email</label><br>
                     <input type="email" name="Email" id="email" placeholder="Enter your email">
 
                 </div>
+                <div class="input-box">
+                    <label for="">Content Type</label><br>
+                    <select name="content" id="dropdown">
+                        <option value="movies">Movies</option>
+                        <option value="series" selected>Series</option>
+                        <option value="tv-show">Tv Shows</option>
+                    </select>
+                </div>
+                
                 <div class="form-submit">
                     <button id="form-button">Send</button>
                 </div>

@@ -18,6 +18,36 @@
 }
 
 /*! ------------- 2- CAROUSEL --------------- */
+.carousel-item{
+    max-height: calc(100vh - 88px);
+}
+
+.carousel-caption h5{
+color: var(--red);
+font-size: 2.4rem;
+text-shadow: 3px 3px 3px black;
+}
+
+.carousel-caption p{
+    text-shadow: 3px 3px 3px black;
+    font-weight: 600;
+}
+
+.carousel-caption .btn{
+    width: 7rem;
+}
+.carousel-caption{
+    bottom: 5rem;
+}
+
+.carousel-indicators{
+    gap: 0.7rem;
+}
+.carousel-indicators button{
+    background-color: var(--red) !important /* boostrap tarafindan verilen stilleri degistirmek icin important kull.*/;
+    width: 3rem !important;
+    height: 0.4rem !important;
+}
 
 /*! ------------ 3- ABOUT SECTION ----------- */
 

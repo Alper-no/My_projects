@@ -83,3 +83,13 @@ section#instructors i:hover{
 /*! ----------- 6- CONTACT SECTION ------------ */
 
 /*! --------------- 7- FOOTER ----------------- */
+footer i{
+    transition: color 0.5s;
+    margin-right: 0.8rem;
+    cursor: pointer;
+}
+footer i:hover{
+    color: var(--red);
+
+}
+

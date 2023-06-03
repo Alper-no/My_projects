@@ -425,7 +425,7 @@
   <h2 class="display-6 text-danger">CONTACT</h2>
   <article>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad eius quis consequatur dolorum. Neque, aspernatur in similique dolorum culpa debitis eaque cumque atque repellendus eveniet vero velit ut iure autem.</p>
-    <div class="row">
+    <div class="row g-3">
       <div class="col-md-4">
         <i class="fas fa-phone fa-2x text-danger"></i>
         <h5>Telephone</h5>
@@ -442,7 +442,41 @@
         <a href="mailto:info@clarusway.com">info@clarusway.com</a>
       </div>
     </div>
+    <form class="row g-3 mt-3">
+      <div class="col-md-6">
+        
+        <input type="email" class="form-control" id="name" placeholder="Enter name" />
+      </div>
+      <div class="col-md-6">
+        
+        <input type="password" class="form-control" id="email" placeholder="Enter Email" />
+      </div>
+      <div class="col-12">
+        
+        <input
+          type="text"
+          class="form-control"
+          id="subject"
+          placeholder="Enter subject"
+        />
+      </div>
+      <div class="col-12">
+      <div class="form-floating">
+        <textarea
+          class="form-control"
+          placeholder="Enter Your Comments"
+          id="floatingTextarea"
+        ></textarea>
+        <label for="floatingTextarea">Enter Your Comments</label>
+      </div>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-danger p-5">Submit</button>
+    </div>
+
+    </form>
   </article>
+
 </section>
       </main>
 

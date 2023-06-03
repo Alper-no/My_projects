@@ -52,6 +52,23 @@ text-shadow: 3px 3px 3px black;
 /*! ------------ 3- ABOUT SECTION ----------- */
 
 /*! ------------- 4- INSTRUCTORS -------------*/
+section#instructors .card{
+    transition: transform 0.3s; /* mause gelince tepkimeyi geciktirir.*/
+    cursor: pointer;
+}
+section#instructors .card:hover{
+    transform: scale(1.03);/*mouse ustune gelince card i buyutur.*/
+}
+
+section#instructors i{
+    transition: opacity 0.5s;
+}
+section#instructors i:hover{
+    opacity: 0.5;
+
+}
+
+
 
 /*! ----------- 4- STUDENTS SECTION ----------*/
 

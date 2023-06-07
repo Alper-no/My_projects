@@ -3,29 +3,38 @@ const ekleBtn = document.getElementById("ekle-btn")
 const gelirInput = document.getElementById("gelir-input")
 const ekleFormu = document.getElementById("ekle-formu")
 
-//?  Sonuc tablosu
-
+//? Sonuc tablosu
 const gelirinizTd = document.getElementById("geliriniz")
 
-
 //? Variables
-let gelirler = ""
+let gelirler = 0
+
 //?Events
 
-//Formun submit butonuna basildignda 
+//? Formun submit butonuna basildiginda
 ekleFormu.addEventListener("submit", (e) => {
-    e.preventDefault()  //? reload u engeller(sayfa yenileme)
-   gelirler = Number(gelirler) + Number(gelirInput.value) //string eklemeyi engelledik
-//input degerini sifiladik.
-   ekleFormu.reset()
+  e.preventDefault() //? reload'u engeller
+  gelirler = gelirler + Number(gelirInput.value) //? string eklemiyi engelledik
 
-   //* degisiklikleri sonuc tablosuna yazan fonk.
-   hesaplaVeGuncelle()
-   
+  //? gelirlerin kalıcı olmasi icin localStorage a kopyaliyoruz
+  localStorage.setItem("gelirler", gelirler)
+
+  //? input degerini sifrladik
+  ekleFormu.reset()
+
+  //? Degisiklikleri sonuc tablosuna yazan fonks.
+  hesaplaVeGuncelle()
 })
+
+//! Sayfa her yuklendikten sonra calisan event
+window.addEventListener("load", () => {
+  gelirler = Number(localStorage.getItem("gelirler"))
+  hesaplaVeGuncelle()
+})
+
 //? Functions
 
-const hesaplaVeGuncelle = ()=> {
-
-    gelirinizTd.innerText = gelirler
+const hesaplaVeGuncelle = () => {
+  gelirinizTd.innerText = gelirler
 }
+

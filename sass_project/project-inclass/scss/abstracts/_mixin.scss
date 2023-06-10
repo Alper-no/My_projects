@@ -6,11 +6,20 @@
     align-items: center;
   }
   
-  @mixin fontMix($family,$style,$weight,$size,$height) {
+  @mixin fontMix($family, $style, $weight, $size, $height) {
     font-family: $family;
     font-style: $style;
     font-weight: $weight;
     font-size: $size;
     line-height: $height;
+  }
+  
+  @mixin bgImage($height, $width, $url) {
+    height: $height;
+    width: $width;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url($url);
   }
   

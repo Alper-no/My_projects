@@ -1,0 +1,7 @@
+//main
+//import sirasi onemlidir. Ortak olan dosyalara her yerden erisim saglayabilmemiz icin oncelikle ortak dosyalari import etmniz gerekiyor.
+@import "./base/reset";
+@import "./abstracts/variables","./abstracts/mixin"; //degiskenlerin ve fonksiyonlarim.
+//variables deki degerlere mix ulasmak istiyorsak ilk variablesi import ederiz.
+@import "./components/footer","./components/navbar","./components/responsive";
+@import "./sections/home","./sections/abou","./sections/destination","./sections/guide";

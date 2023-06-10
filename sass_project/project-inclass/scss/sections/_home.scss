@@ -47,19 +47,19 @@
         }
       }
       &--button {
-        margin: 1rem 0px;
-        border: none;
-        background: rgb(251, 143, 29);
-        border-radius: 8px;
-        font-family: Inter;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 0.9rem;
-        width: 90px;
-        height: 30px;
-        color: rgb(255, 255, 255);
+      //   margin: 1rem 0px;
+      //   border: none;
+      //   background: rgb(251, 143, 29);
+      //   border-radius: 8px;
+      //   font-family: Inter;
+      //   font-style: normal;
+      //   font-weight: 500;
+      //   font-size: 0.9rem;
+      //   width: 90px;
+      //   height: 30px;
+      //   color: rgb(255, 255, 255);
+        @include btnMix(90px);
       }
     }
   }
-  
   

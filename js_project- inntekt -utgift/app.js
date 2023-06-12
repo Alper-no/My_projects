@@ -109,11 +109,11 @@ const harcamayiDomaYaz = ({ id, miktar, tarih, alan }) => {
   </tr>
   `
 }
-
+//! Harcama tablosunda herhangi bir alana tiklanildiginda calisir.
 harcamaBody.addEventListener("click", (e) => {
   // console.log(e.target)
 
-  //? Event bir sil butonundan geldi ise
+  //? Tiklama sil butonlarindan geldi ise
   if (e.target.classList.contains("fa-trash-can")) {
     //? DOM'dan ilgili row'u sildik.
     e.target.parentElement.parentElement.remove()
@@ -134,11 +134,13 @@ harcamaBody.addEventListener("click", (e) => {
 
 //? temizle butonına basildigi zaman calis
 temizleBtn.addEventListener("click", () => {
-  harcamaListesi = [] //? RAM'deki harcama listesini sil
-  gelirler = 0 //? RAM'deki gelirleri sil
-  localStorage.clear() //? local straoge'daki tüm verileri sil
-  harcamaBody.innerHTML = "" //? DOM'daki tüm harcamlar sil
-  hesaplaVeGuncelle() //? sonuc tablosundaki (DOM) gelirler, giderler ve kalan degerleri sil.
+  if (confirm("Silmek istedigine emin misiniz?")) {
+    harcamaListesi = [] //? RAM'deki harcama listesini sil
+    gelirler = 0 //? RAM'deki gelirleri sil
+    localStorage.clear() //? local straoge'daki tüm verileri sil
+    harcamaBody.innerHTML = "" //? DOM'daki tüm harcamlar sil
+    hesaplaVeGuncelle() //? sonuc tablosundaki (DOM) gelirler, giderler ve kalan degerleri sil.
+  }
 })
 
 

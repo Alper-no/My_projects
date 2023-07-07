@@ -1,3 +1,4 @@
+
 const Card = ({title,date,image,desc}) =>{
     // const {title,date,image,desc}=props
     return(

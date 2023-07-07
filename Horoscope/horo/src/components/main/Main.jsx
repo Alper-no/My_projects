@@ -6,7 +6,7 @@ const Main = () =>{
         <div className="card-container">
             
             {data.map((item)=>(
-            <Card  {...item}/>
+            <Card {...item}/>
             ))}
         </div>
     )

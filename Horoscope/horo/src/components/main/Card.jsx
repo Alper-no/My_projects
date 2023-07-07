@@ -1,15 +1,16 @@
-const Card = () =>{
+const Card = ({title,date,image,desc}) =>{
+    // const {title,date,image,desc}=props
     return(
         <div className="cards">
             <div className="title">
-                <h1>title</h1>
+                <h1>{title}</h1>
             </div>
             <div className="date">
-                <h2>date</h2>
+                <h2>{date}</h2>
             </div>
-            <img src="" alt="" />
+            <img src={image} alt="" />
             <div className="card-over">
-                <p>description</p>
+                <p>{desc}</p>
             </div>
         </div>
     )

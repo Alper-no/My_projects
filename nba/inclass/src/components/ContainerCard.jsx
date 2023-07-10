@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+// import Col from "react-bootstrap/Col";
 import {data} from "../helpers/data";
 import PlayerCard from './PlayerCard';
 
@@ -29,22 +29,24 @@ const ContainerCard = () => {
       />
       <Container className="p-3 rounded-4 card-container my-3">
         <Row xs={2} md={4} lg={6} className="justify-content-center g-3">
-          <Col>1 of 2</Col>
+         
           {/* {filteredData.map((player, i) => (
             <PlayerCard
               key={i}
               player={player}
+              //{player}
+              // const {img,name,statistics} = player;
+              //player.img
               img={player.img}
               name={player.name}
               statistics={player.statistics}
-              {...player}
+              // {name,img,statistics}
+              {...player} // objenin içerisndeki tüüm veriler lazımsa 
+              // {name,img,statistics}
             />
           ))} */}
           {filteredData.map((player, i) => (
-            <PlayerCard
-              key={i}
-              {...player}
-            />
+            <PlayerCard key={i} {...player} />
           ))}
         </Row>
       </Container>
@@ -52,4 +54,4 @@ const ContainerCard = () => {
   );
 }
 
-export default ContainerCard
+export default ContainerCard;

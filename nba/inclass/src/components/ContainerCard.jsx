@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -13,6 +13,7 @@ const ContainerCard = () => {
         console.log(e.target.value)
         setSearch(e.target.value) //! setter mtodları asenkron olarak çalışır.
         // console.log(search)
+        
     }
     console.log(search);
 
@@ -28,8 +29,7 @@ const ContainerCard = () => {
         onChange={handleChange}
       />
       <Container className="p-3 rounded-4 card-container my-3">
-        <Row xs={2} md={4} lg={6} className="justify-content-center g-3">
-         
+        <Row xs={1} sm={2} md={3} lg={4} className="justify-content-center g-3">
           {/* {filteredData.map((player, i) => (
             <PlayerCard
               key={i}
@@ -45,6 +45,13 @@ const ContainerCard = () => {
               // {name,img,statistics}
             />
           ))} */}
+          {/* {data
+            .filter(item =>
+              item.name.toLowerCase().includes(search.trim().toLowerCase())
+            )
+            .map((player, i) => (
+              <PlayerCard key={i} {...player} />
+            ))} */}
           {filteredData.map((player, i) => (
             <PlayerCard key={i} {...player} />
           ))}
@@ -54,4 +61,4 @@ const ContainerCard = () => {
   );
 }
 
-export default ContainerCard;
+export default ContainerCard

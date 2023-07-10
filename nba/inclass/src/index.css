@@ -10,3 +10,10 @@ body {
   
 }
 
+.card-container{
+  background-image: url('./assets/nba.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 400px;
+}
+

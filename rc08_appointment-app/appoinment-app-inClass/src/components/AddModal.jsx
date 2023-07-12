@@ -2,8 +2,17 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 import Form from "react-bootstrap/Form";
+import { useState } from "react";
 
 function AddModal({ show, handleClose }) {
+  const [name, setName] = useState("");
+  const [date, setDate] = useState(new Date().toISOString().slice(0,10));
+
+  const handleSubmit = (e)=>{
+    e.prevent.Default()
+
+    handleClose()
+  }
   return (
     <>
       <Modal show={show} onHide={handleClose}>
@@ -11,35 +20,36 @@ function AddModal({ show, handleClose }) {
           <Modal.Title>Appointment for ...</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
+              <Form.Label>Patitent Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Label>Date</Form.Label>
+              <Form.Control
+                type="date"
+                placeholder="Date"
+                onChange={(e) => setDate(e.target.value)}
+                value={date}
+              />
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
+            <div className="text-center ">
+              <Button variant="success" type="submit" className="me-2">
+                Save
+              </Button>
+              <Button variant="danger" onClick={handleClose}>
+                Close
+              </Button>
+            </div>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

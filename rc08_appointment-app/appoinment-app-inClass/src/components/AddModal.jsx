@@ -1,15 +1,24 @@
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button"
+import Modal from "react-bootstrap/Modal"
+import Form from "react-bootstrap/Form"
+import { useState } from "react"
 
-import Form from "react-bootstrap/Form";
-import { useState } from "react";
+function AddModal({ show, handleClose, apps, setApps, drName }) {
+  const [name, setName] = useState("")
+  const [date, setDate] = useState(new Date().toISOString().slice(0, 10))
 
-function AddModal({ show, handleClose }) {
-  const [name, setName] = useState("");
-  const [date, setDate] = useState(new Date().toISOString().slice(0,10));
-
-  const handleSubmit = (e)=>{
-    e.prevent.Default()
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setApps([
+      ...apps,
+      {
+        id: apps.length + 1,
+        patient: name,
+        day: date,
+        consulted: false,
+        doctor: drName,
+      },
+    ])
 
     handleClose()
   }
@@ -17,12 +26,12 @@ function AddModal({ show, handleClose }) {
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Appointment for ...</Modal.Title>
+          <Modal.Title>Appointment for {drName}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Patitent Name</Form.Label>
+            <Form.Group className="mb-3" controlId="name">
+              <Form.Label>Patient Name</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter name"
@@ -31,7 +40,7 @@ function AddModal({ show, handleClose }) {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="date">
               <Form.Label>Date</Form.Label>
               <Form.Control
                 type="date"
@@ -40,7 +49,8 @@ function AddModal({ show, handleClose }) {
                 value={date}
               />
             </Form.Group>
-            <div className="text-center ">
+
+            <div className="text-center">
               <Button variant="success" type="submit" className="me-2">
                 Save
               </Button>
@@ -52,7 +62,7 @@ function AddModal({ show, handleClose }) {
         </Modal.Body>
       </Modal>
     </>
-  );
+  )
 }
 
-export default AddModal;
+export default AddModal

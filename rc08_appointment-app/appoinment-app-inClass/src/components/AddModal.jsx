@@ -19,7 +19,6 @@ function AddModal({ show, handleClose, apps, setApps, drName }) {
         doctor: drName,
       },
     ])
-
     handleClose()
   }
   return (
@@ -66,3 +65,4 @@ function AddModal({ show, handleClose, apps, setApps, drName }) {
 }
 
 export default AddModal
+

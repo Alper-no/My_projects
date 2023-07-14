@@ -7,7 +7,7 @@ const AppointmentList = ({ apps, setApps }) => {
   console.log(apps)
 
   const handleDelete = (id) => {
-    setApps()
+    setApps( apps.filter((item)=> item.id !==id))
   }
   return (
     <Container className="p-2">

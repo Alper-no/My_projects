@@ -15,7 +15,7 @@ const Home = () => {
 
       
       <Doctors apps={appointments} setApps={setAppointments} />
-      <AppointmentList apps={appointments} />
+      <AppointmentList apps={appointments} setApps={setAppointments} />
     </main>
   )
 }

@@ -3,12 +3,17 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { LuDelete } from "react-icons/lu";
 
-const AppointmentList = ({ apps }) => {
+const AppointmentList = ({ apps, setApps }) => {
+  const handleDelete = (id) => {
+    setApps(apps.filter((item) => item.id !== id));
+  };
+
   return (
     <Container className="p-2">
       <h3 className="display-6 mb-2" style={{ color: "rgb(166, 18, 189)" }}>
         Appointment List
       </h3>
+      {apps.length < 1 && <img src="./img/appointment.jpg" width= '70%' />}
 
       {apps.map(({ id, patient, consulted, doctor, day }) => (
         <div
@@ -25,7 +30,11 @@ const AppointmentList = ({ apps }) => {
               <h5>{day}</h5>
             </Col>
             <Col className="text-end">
-              <LuDelete className="text-danger fs-2 " />
+              <LuDelete
+                className="text-danger fs-2 "
+                onClick={() => handleDelete(id)}
+                type="button"
+              />
             </Col>
           </Row>
         </div>

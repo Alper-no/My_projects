@@ -6,7 +6,14 @@ import Form from "react-bootstrap/Form";
 
 function AddModal({ show, handleClose }) {
   const [name, setName] = useState("");
-  const [date, setDate] = useState(new Date().);
+  const [date, setDate] = useState(new Date().toISOString().slice(0,10));
+
+
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    //------
+    handleClose()
+  }
 
   return (
     <>
@@ -15,7 +22,7 @@ function AddModal({ show, handleClose }) {
           <Modal.Title>Appointment for ...</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Pasient Name</Form.Label>
               <Form.Control

@@ -21,6 +21,7 @@ const TodoList = ({ todos, setTodos }) => {
               width="24"
               height="24"
               fill="red"
+              role='button'
               onClick={() => deleteTodo(todo.id)}
               className="bi bi-trash-fill"
               viewBox="0 0 16 16"

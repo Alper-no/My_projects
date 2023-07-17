@@ -1,7 +1,11 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, setTodos }) => {
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
   return (
     <div>
       <h1 className="text-center text-secondary">Todos</h1>
@@ -11,12 +15,13 @@ const TodoList = ({ todos }) => {
             variant="success"
             className="m-2 text-capitalize rounded-5 d-flex justify-content-between"
           >
-            <span>{todo.text}</span>  
+            <span>{todo.text}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
               fill="red"
+              onClick={() => deleteTodo(todo.id)}
               className="bi bi-trash-fill"
               viewBox="0 0 16 16"
             >

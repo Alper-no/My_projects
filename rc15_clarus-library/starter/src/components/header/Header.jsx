@@ -16,17 +16,23 @@ const Header = () => {
   const handleChange = (e) => {
     setSearchInfo({...searchInfo, [e.target.name] : e.target.value})
   };
+
+  const handleSubmit = (e)=>{
+    e.prevent.Default()
+    getData()
+  }
   return (
     <HeaderContainer>
       Header
       <HeaderTitle>BOKKS OR MAGAZINES</HeaderTitle>
-      <HeaderForm>
+      <HeaderForm onSubmit={handleSubmit}>
         <SearchInput
           type="search"
           placeholder="Search"
           name="query"
           value={searchInfo.query}
           onChange={handleChange}
+          required
         />
         <SelectBox
           value={searchInfo.selectType}

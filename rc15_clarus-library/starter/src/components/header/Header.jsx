@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       Header
-      <HeaderTitle>BOKKS OR MAGAZINES</HeaderTitle>
+      <HeaderTitle>BOOKS OR MAGAZINES</HeaderTitle>
       <HeaderForm onSubmit={handleSubmit}>
         <SearchInput
           type="search"

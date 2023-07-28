@@ -1,8 +1,19 @@
 import React from 'react'
+import { menuIcon } from '../../helper/iconData'
+import { Logo, MenuLink, Menu, Nav, HamburgerIcon  } from './Navbar.style'
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <Nav>Navbar
+      <Logo> </Logo>
+      <HamburgerIcon>
+
+        {menuIcon}
+      </HamburgerIcon>
+      <Menu>
+        <MenuLink>Home</MenuLink>
+      </Menu>
+    </Nav>
   )
 }
 

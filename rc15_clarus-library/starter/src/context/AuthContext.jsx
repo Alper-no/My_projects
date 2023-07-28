@@ -7,6 +7,8 @@ const AuthContext = createContext();
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(sessionStorage.getItem("user") || false);
 
+  
+
   useEffect(() => {
     sessionStorage.setItem("user", user);
   }, [user]);

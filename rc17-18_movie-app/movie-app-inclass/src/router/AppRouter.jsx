@@ -7,7 +7,8 @@ import Register from "../pages/Register";
 import MovieDetail from "../pages/MovieDetail";
 
 const AppRouter = () => {
-  return <BrowserRouter>
+  return (
+    <>
     <Navbar/>
     <Routes>
       <Route path="/" element={<Main/>}/>
@@ -15,8 +16,9 @@ const AppRouter = () => {
       <Route path="/register" element={<Register/>}/>
       <Route path="/details/:id" element={<MovieDetail/>}/>
     </Routes>
+    </>
+  )
   
-  </BrowserRouter>
 };
 
 export default AppRouter;

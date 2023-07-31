@@ -1,8 +1,13 @@
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import React, { createContext } from "react";
 import { auth } from "../auth/firebase";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
+
 
 //* with custom hook
 // export const useAuthCotext =() => {
@@ -10,6 +15,7 @@ export const AuthContext = createContext();
 // }
 
 const AuthContextProvider = ({ children }) => {
+    let navigate = useNavigate();
   const createUser = async (email, password) => {
     //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
     try {
@@ -19,18 +25,20 @@ const AuthContextProvider = ({ children }) => {
         password
       );
       console.log(userCredential);
+      navigate('/');
     } catch (error) {
       console.log(error.message);
     }
   };
 
-  const signIn = async(email,password)=>{
+  const signIn = async (email, password) => {
     try {
-       await signInWithEmailAndPassword(auth, email, password)
+      await signInWithEmailAndPassword(auth, email, password);
+      navigate('/')
     } catch (error) {
-       console.log(error.message); 
+      console.log(error.message);
     }
-  }
+  };
 
   const values = { createUser, signIn };
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

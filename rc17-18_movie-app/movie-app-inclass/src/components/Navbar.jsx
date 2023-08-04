@@ -10,8 +10,8 @@ function classNames(...classes) {
 }
 
 export default function Navbar() {
-  const {logOut} = useContext(AuthContext)
-  const currentUser = { displayName: "Felix Franko" };
+  const {logOut ,currentUser} = useContext(AuthContext)
+  // const currentUser = { displayName: "Felix Franko" };
   return (
     <>
       <Disclosure
@@ -37,6 +37,7 @@ export default function Navbar() {
                       className="h-8 w-8 rounded-full"
                       src={currentUser?.photoURL || avatar}
                       alt="user"
+                      referrerPolicy="no-referrer"
                     />
                   </Menu.Button>
                 </div>
